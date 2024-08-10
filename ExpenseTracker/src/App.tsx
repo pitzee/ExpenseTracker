@@ -1,5 +1,7 @@
+import ExpenseForm from "./components/ExpenseForm";
+
 const App = () => {
-  return <div>App</div>;
+  return <ExpenseForm />;
 };
 
 export default App;
