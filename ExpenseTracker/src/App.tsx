@@ -1,7 +1,7 @@
 import ExpenseForm from "./components/ExpenseForm";
 
 const App = () => {
-  return <ExpenseForm />;
+  return <ExpenseForm onSubmit={(data) => console.log(data)} />;
 };
 
 export default App;
