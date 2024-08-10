@@ -1,7 +1,16 @@
 import ExpenseForm from "./components/ExpenseForm";
+import ExpenseList from "./components/ExpenseList";
 
 const App = () => {
-  return <ExpenseForm onSubmit={(data) => console.log(data)} />;
+  return (
+    <>
+      <div className="mb-3">
+        <ExpenseForm onSubmit={(data) => console.log(data)} />
+      </div>
+
+      <ExpenseList />
+    </>
+  );
 };
 
 export default App;
