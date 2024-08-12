@@ -1,9 +1,4 @@
-interface Expense {
-  description: string;
-  amount: number;
-  category: string;
-  id: number;
-}
+import Expense from "../utilities/Expense";
 
 interface Props {
   expense: Expense[];

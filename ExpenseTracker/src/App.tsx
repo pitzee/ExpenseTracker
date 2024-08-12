@@ -2,14 +2,10 @@ import { useState } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseFilter from "./components/ExpenseFilter";
+import Expense from "./utilities/Expense";
 
 const App = () => {
-  const [expense, setExpense] = useState([
-    { id: 1, description: "milk", amount: 4, category: "utilities" },
-    { id: 2, description: "milk", amount: 4, category: "groceries" },
-    { id: 3, description: "milk", amount: 4, category: "entertainment" },
-    { id: 4, description: "milk", amount: 4, category: "utilities" },
-  ]);
+  const [expense, setExpense] = useState<Expense[]>([]);
 
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -20,7 +16,11 @@ const App = () => {
   return (
     <>
       <div className="mb-3">
-        <ExpenseForm onSubmit={(data) => console.log(data)} />
+        <ExpenseForm
+          onSubmit={(exp) =>
+            setExpense([...expense, { ...exp, id: expense.length + 1 }])
+          }
+        />
       </div>
 
       <div className="mb-3">
